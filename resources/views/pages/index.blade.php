@@ -19,6 +19,4 @@
         </table>
     <hr class="solid">
 
-
-
 @endsection

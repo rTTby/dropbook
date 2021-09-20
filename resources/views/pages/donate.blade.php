@@ -22,8 +22,13 @@
         <table style="height: 100px; margin-top: 50px;   border: 1px solid black;" class="table table-bordered">
         <tbody>
             <tr>
-            <td class="align-text-bottom" style="font-size:30pt; text-align:center; font-weight:bold;   border: 1px solid black;">$30</td>
-            <td class="align-text-bottom" style="font-size:30pt; text-align:center; font-weight:bold;  border: 1px solid black;">$300</td>
+            <td class="align-text-bottom" style="font-size:30pt; text-align:center; font-weight:bold; border: 1px solid black; table-layout: fixed;  table-layout: fixed; width: 50%; ">$30 = 1 Box</td>
+            <td class="align-text-bottom" style="font-size:30pt; text-align:center; font-weight:bold; border: 1px solid black; table-layout: fixed ; table-layout: fixed; width: 50%;">$300 = 10 Boxes</td>
+            </tr>
+            <tr>
+            <td class="align-text-bottom" style="font-size:30pt; text-align:center; font-weight:bold;"><button class="donate30" style="margin-left:auto;margin-right:auto;display:block;margin-top:5%;margin-bottom:5%;border-radius: 12px; background-color:yellow;">donate</button></td>
+            <td class="align-text-bottom" style="font-size:30pt; text-align:center; font-weight:bold;"><button class="donate300" style="margin-left:auto;margin-right:auto;display:block;margin-top:5%;margin-bottom:5%;border-radius: 12px; background-color:yellow;">donate</button></td>
+            </tr>
         </tbody>
         </table>
         
