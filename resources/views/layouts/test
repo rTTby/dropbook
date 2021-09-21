@@ -23,7 +23,7 @@
     <div id="app" style="font-size:15pt;">
         <nav class="navbar navbar-expand-md navbar-light bg-warning shadow-sm">
             <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}" style="font-size: 15pt">
+                <a class="navbar-brand" href="{{ url('/') }} " style="font-size:15pt;">
                     {{ config('app.name', 'Laravel') }}
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
@@ -33,26 +33,25 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
-                        <li class="nav-item">
-                                <a class="nav-link" href="/posts/create">Donate Book</a>
-                            </li>
-                        </ul>
-    
+                    <li class="nav-item">
+                                    <a class="nav-link" href="/posts/create">Add Post</a>
+                        </li>
+                    </ul>
 
                     <!-- Right Side Of Navbar -->
-                    <ul class="navbar-nav ml-auto" style="font-size:15pt; color: black">
+                    <ul class="navbar-nav ml-auto" style="font-size:15pt; color: black" >
                         <!-- Authentication Links -->
                         <li class="nav-item">
-                                        <a class="nav-link" href="/">Home</a>
-                            </li>
-                            <li class="nav-item">
-                                        <a class="nav-link" href="/about">About</a>
-                            </li>
-                            <li class="nav-item">
-                                        <a class="nav-link" href="/donate">Donate</a>
-                            </li>
-                            <li class="nav-item">
-                                        <a class="nav-link" href="/posts">Gallery</a>
+                                    <a class="nav-link" href="/">Home</a>
+                        </li>
+                        <li class="nav-item">
+                                    <a class="nav-link" href="/about">About</a>
+                        </li>
+                        <li class="nav-item">
+                                    <a class="nav-link" href="/donate">Donate</a>
+                        </li>
+                        <li class="nav-item">
+                                    <a class="nav-link" href="/posts">Gallery</a>
                         </li>
                         @guest
                             @if (Route::has('login'))
@@ -82,9 +81,6 @@
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                         @csrf
                                     </form>
-                                    <a  class="dropdown-item" href="{{ url('/home') }}">
-                                        {{ __('Profile') }}
-                                    </a>
                                 </div>
                             </li>
                         @endguest
@@ -92,11 +88,11 @@
                 </div>
             </div>
         </nav>
-        <div class="container">
+
+        <main class="py-4 container">
             @include('inc.messages')
-            <main class="py-4">
-                @yield('content')
-            </main>
+            @yield('content')
+        </main>
     </div>
 </body>
 </html>

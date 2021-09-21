@@ -41,21 +41,20 @@
         @if(count($posts) > 0)
         <div class='card' style="margin-top:50px">
             <ul class="List-group list-group-flush">
-
             @foreach($posts as $post)
             <div class="row">
                 <div class="col-md-4">
-                        <img style="width: 50%;height: 80%; background-size: cover; margin-top:50px" src="/storage/book_image/{{$post->book_image}}" alt="">
+                        <img style="width: 80%"src="/storage/book_image/{{$post->book_image}}" alt="">
                 </div>
                 <div class="col-md-8">
                     
                         <h3 style="margin-top: 50px"><a href="/posts/{{$post->id}}">{{$post->title}}</a></h3>
                         <small>Posted on {{$post->created_at}}</small>
+
                        
                 </div>
                 
-            </div>
-                                       
+            </div>               
             @endforeach
             </ul>
         </div>

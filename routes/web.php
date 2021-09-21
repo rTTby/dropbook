@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Input;
+use App\Post;
+use App\Http\Controllers\PostController;
 
 
 /*
@@ -49,3 +52,11 @@ Route::resource('posts', 'PostsController');
 
 Route::get('/create', 'HomeController@create')->name('create');
 
+
+Auth::routes();
+Route::get('/donate', 'PostsController@create');
+
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('/search', 'PostsController@search')->name('search');

@@ -8,10 +8,6 @@
                 <div class="card-header">{{ __('Login') }}</div>
 
                 <div class="card-body">
-                <div class="text-center">
-                  <img src="https://i.pinimg.com/474x/b9/ce/34/b9ce34215b99362fd3b68e27edfb4d05.jpg" style="width: 185px;" alt="logo">
-                  <h4 class="mt-1 mb-5 pb-1">We are DropBook Team</h4>
-                </div>
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
 

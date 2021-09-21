@@ -6,6 +6,11 @@ use Illuminate\Http\Request;
 
 class PagesController extends Controller
 {
+    public function getIndex() {
+        $post = Post::find(1);
+        echo $post->user->name;
+    return view('pages.welcome')->withPost($post);
+    }
     public function index(){
         $title = "  Welcome to DropBook !   ";
 

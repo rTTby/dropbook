@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+
 use Illuminate\Http\Request;
+use App\Models\User;
 
 class HomeController extends Controller
 {
@@ -23,13 +25,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
-    }
-
-    public function create()
-    {
-        $data= user::latest()->first();
-        log::debug("YOUTTAG",[$data]);
-        return view('donate'); // next:- page name created with next.blade.php 
+        $user_id = auth()->user()->id;
+        $user = User::find($user_id);
+        return view('home')->with('posts', $user->posts);
     }
 }

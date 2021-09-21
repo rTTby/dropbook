@@ -12,32 +12,26 @@
             </td>
             </tr>
         </table>
-        <h1 style="font-size:30pt; text-align:center; font-weight:bold; margin-top:50px;">Donate-A-Box</h1>
-        <h4 style=" text-align-last: center; margin-top: 50px;">Drop book supports organizations that don’t have books in their libraries for the children.</h4>
-        <h4 style=" position:relative;text-align:center; margin-top: 50px;">Donate-A-Box provides a box of gently-used children's books for only $30 to an organization.</h4>
-        <h4 style=" position:relative;text-align:center; margin-top: 50px; color:DarkTurquoise;">Give one box or give ten boxes, but let’s GET KIDS READING!</h4>
-
-        <p style="font-size:20pt; margin-top: 50px;">These are the donation plan : </p>
-
-        <table style="height: 100px; margin-top: 50px;   border: 1px solid black;" class="table table-bordered">
-        <tbody>
-            <tr>
-            <td class="align-text-bottom" style="font-size:30pt; text-align:center; font-weight:bold; border: 1px solid black; table-layout: fixed;  table-layout: fixed; width: 50%; ">$30 = 1 Box</td>
-            <td class="align-text-bottom" style="font-size:30pt; text-align:center; font-weight:bold; border: 1px solid black; table-layout: fixed ; table-layout: fixed; width: 50%;">$300 = 10 Boxes</td>
-            </tr>
-            <tr>
-            <td class="align-text-bottom" style="font-size:30pt; text-align:center; font-weight:bold;"><button class="donate30" style="margin-left:auto;margin-right:auto;display:block;margin-top:5%;margin-bottom:5%;border-radius: 12px; background-color:yellow;">donate</button></td>
-            <td class="align-text-bottom" style="font-size:30pt; text-align:center; font-weight:bold;"><button class="donate300" style="margin-left:auto;margin-right:auto;display:block;margin-top:5%;margin-bottom:5%;border-radius: 12px; background-color:yellow;">donate</button></td>
-            </tr>
-        </tbody>
-        </table>
+        <hr style="margin-buttom:50px">
+        @if(!Auth::guest())
+            @if(Auth::user()->id == $post->user_id)
+            <h1 style="margin-top:50px;">Post the book that you want to donate</h1>
+            {!! Form::open(['action' => 'PostsController@store', 'method' => 'POST', 'enctype' => 'multipart/form-data']) !!}
+            <div class="form-group">
+                {{Form::label('title', 'Title')}}
+                {{Form::text('title', '', ['class' => 'form-control', 'placeholder' => 'Title'])}}
+            </div>
+            <div class="form-group">
+                {{Form::label('body', 'Body')}}
+                {{Form::textarea('body', '', ['class' => 'form-control', 'placeholder' => 'Other info : ISBN number, Edition, Year of Publish, Author name'])}}
         
-        <!-- @if(count($donate) > 0) -->
-        <!-- <ul style="font-size:20pt;"> -->
-            <!-- @foreach($donate as $donate) -->
-                <!-- <li>{{$donate}}</li> -->
-            <!-- @endforeach -->
-        <!-- </ul> -->
-        <!-- @endif -->
-        
+            </div> 
+            <div class="form-group">
+                {{Form::file('book_image')}}
+            </div>
+            {{Form::submit('Submit', ['class' => 'btn btn-primary'])}}
+            {!! Form::close() !!}
+            @endif
+        @endif    
+      
 @endsection
